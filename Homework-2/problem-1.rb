@@ -3,20 +3,26 @@
 
 # We are defining a method called fizzbuzz w/ perameter number
 def fizzbuzz(number)
-  # These Case occurs when the condition is true
+  # Each Case occurs when the condition is true
   case
-    # i think the sign means a remainder of... but if its equal to 0 the string would rutern.
+    # modulo operater that says when Number is / by 15,3 or 5 has a remainder of 0, enter the string respectively.
     when number % 15 == 0 then 'Fizzbuzz'
     when number % 3  == 0 then 'Fizz'
     when number % 5  == 0 then 'Buzz'
-    # else just the perameter
+    # else just enter the perameter
     else number
+  # ends the case
   end
+# ends the method
 end
 
-# defining another method fizzbuzz_to with a limit perameter
+# We are defining method called fizzbuzz_to w/ limit perameter.
 def fizzbuzz_to(limit)
+  # a loop that starts at 1 calling the method upto what ever limit is entered, then it will do whats in the block.
   1.upto(limit) do |i|
+    # puts the method fizzbuzz which is the loop code up untill whay ever limit is set. (Im a bit confused about the |i| in this scenario???)
     puts(fizzbuzz(i))
+  # ends the loop
   end
+# ends the method
 end

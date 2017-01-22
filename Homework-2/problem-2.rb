@@ -9,10 +9,22 @@
 # Create a new instance of the Homework class and call each of the previous methods.
 
 class Homework
-  attr_accessor :hey_world
-
-  def shout(word)
-    return "#{word}.upcase"
+  def shout (word)
+    puts '#{word}'.upcase
   end
 
-  shout("Quieeeet!")
+  # def repeat_string(write_word, number_of_times=3)
+  #   1.upto(number_of_times) do |number_of_times|
+  #   puts ("#{write_word}")
+  # end
+
+  # def calendar (["MLK", "Columbus"], ["Jan 16", "Oct 9"])
+  #   return [0] + [0] && [1] + [1]
+  # end
+end
+
+shout ('Quieeeet!')
+# repeat_string ("love", 3)
+# calendar ()
+
+# problems = Homework.new
