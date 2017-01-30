@@ -7,28 +7,31 @@
 class Utility
 
   def count_words (words)
-    # words = words.split(" ")
-    count = Hash.new { |hash, key| hash[key] =  }
-    count_words.each do
-
+    words = words.split(" ")
+    count = Hash.new {0}
+    count_words.each do |word|
+      count[word] += 1
+    end
+    count = count.sort_by {|a, b| b }
+    count.reverse!
+    count.each { |word, count| puts word + " " + count.to_s }
   end
+end
 
+Utility.new.count_words('it was the best of times, it was the worst of times.')
 
-
-  Utility.count_words('it was the best of times, it was the worst of times.')
-
-
-
-
-
-
-
-
-
-  numbers = [578, 16, 85]
-  sum = 0
-
-  numbers.each do |i|
-
-
-    puts(sum)
+  #
+  #
+  #
+  #
+  #
+  #
+  #
+  #
+  # numbers = [578, 16, 85]
+  # sum = 0
+  #
+  # numbers.each do |i|
+  #
+  #
+  #   puts(sum)
