@@ -7,11 +7,30 @@
 # Call the speak method on an instance of each of your subclasses
 
 class Animal
-  def sound(talk)
-    sound()
+  # attr_accessor (:sound)
+  def sound()
+    ""
   end
   def speak()
+    print "The animal says #{sound}"
+  end
 
 end
 
-class Cow << Animal
+
+
+class Cow < Animal
+  def sound()
+    "Moooooo"
+  end
+end
+
+
+class Duck < Animal
+  def sound()
+    "Quaaaaaack"
+  end
+end
+
+cow = Cow.new
+cow.speak
