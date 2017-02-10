@@ -1,0 +1,29 @@
+<h1>Leave us a message</h1>
+
+<%= form_tag('/thanks') do %>
+  <p>
+    <%= label_tag(:name, 'Name') %>
+    <%= text_field_tag(:name, 'Enter full name' ) %>
+    <%= label_tag(:emial, 'Email') %>
+    <%= text_field_tag(:name, 'Enter your email' ) %>
+  </p>
+
+  <p>
+    <%= label_tag(:message, 'Message') %>
+  </p>
+  <p>
+    <%= text_area_tag(:name, 'Whats on your mind?' ) %>
+  </p>
+  <p>
+    <%= check_box_tag(:subscription) %>
+    <%= label_tag(:resubscriptionply, 'Would you like to subscribe?')%>
+  </p>
+  <p>
+    <%= radio_button_tag(:age, 'child') %>
+    <%= label_tag(:age_child, 'I am younger than 21') %>
+    <%= radio_button_tag(:age, 'adult') %>
+    <%= label_tag(:age_adult, "I'm over 21") %></p>
+  <p>
+    <%= submit_tag('Submit') %>
+  </p>
+<% end %>
