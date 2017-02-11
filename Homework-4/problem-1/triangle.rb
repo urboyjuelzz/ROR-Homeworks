@@ -5,25 +5,26 @@
 # Add a constructor to Triangle that takes three numbers as parameters representing the lengths of the sides of the triangle.
 # Add a method to Triangle called kind that returns a symbol indicating whether the triangle is equilateral, isosceles, or scalene. The method should raise an exception for triangles with any side of length less than or equal to zero and for triangles whose sides violate the triangle inequality (Links to an external site.).
 
+class TraingleError < RuntimeError
+end
 
 class Triangle
   # attr_accessor (:)
- 
+
   def initialize(a, b, c)
+    @a = a
+    @b = b
+    @c = c
   end
 
   def kind
-    if (a == b || a == c || b == c)
-      :equilateral
+    if (a == b) || (a == c) || (b == c)
+      return :equilateral
     elsif (a <= b + c)
-      :isosceles
+      return :isosceles
     elsif (a != b && c || b != c && a || c != b && a)
-      :scalene
-    else
-      puts exception (less than zero or equal to zero)
-    end
+      return :scalene
+    else (a <= 0) || (b <= 0) || (c <= 0)
       raise(TriangleError)
   end
-end
-class TraingleError < RuntimeError
 end
