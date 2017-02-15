@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213063333) do
+ActiveRecord::Schema.define(version: 20170214194809) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "product_id"
@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 20170213063333) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "password"
-    t.datetime "created"
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
