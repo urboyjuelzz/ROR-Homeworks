@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SparkAuthors</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <h1>Spark Authors</h1>
+  <!-- <section class="nav_bar">
+    <div id="home">
+      <ul class="menu" id="myMenu">
+        <a href="index.html#home"><img class="logo" src="img/logo.png"></a>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Write</a></li>
+        <li><a href="#media">Discover</a></li>
+        <li class="icon">
+          <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+        </li>
+      </ul>
+    </div>
+  </section> -->
+<%= yield %>
+
+</body>
+</html>
