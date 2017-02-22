@@ -1,1 +1,9 @@
-<h1>hello</h1>
+<%= link_to ('All Users', users_path %>
+
+<% if @user %>
+    <h1>Hello <%= @user.first_name%> <%= @user.last_name%></h1>
+
+    <p>You are a <%= @user.gender%> that's <%= @user.age %> years old.</p>
+<% else %>
+    <p>Character not found!</p>
+<% end %>

@@ -1,0 +1,34 @@
+<h1>Edit</h1>
+
+<!-- create a link that lets users go back to the index view -->
+<p><%= link_to 'Home page', users_path %></p>
+
+<!-- Create a users sign up form! -->
+<!-- the show should direct them to their user profile. -->
+<%= form_for @users url: {action: 'update' } do |f| %>
+  <p>
+    <%= label_tag(:first_name, 'First Name:') %>
+    <%= text_field_tag(:first_name, 'Enter first name' ) %>
+    <%= label_tag(:last_name, 'Last Name:') %>
+    <%= text_field_tag(:last_name, 'Enter last_name' ) %>
+  </p>
+
+  <p>
+    <%= label_tag(:emial, 'Email:') %>
+    <%= text_field_tag(:email, 'Enter your email' ) %>
+  </p>
+  <p>
+    <%= label_tag(:gender, 'Gender:') %>
+    <%= text_field_tag(:gender, 'Male or Famale' ) %>
+  </p>
+  <p>
+    <%= label_tag(:age, 'Age:') %>
+    <%= text_field_tag(:age, 'Enter age with number' ) %>
+  </p>
+  <p>
+    <%= check_box_tag(:subscription) %>
+    <%= label_tag(:resubscriptionply, 'Would you like to subscribe?')%>
+  </p>
+    <%= submit_tag('Submit') %>
+  </p>
+<% end %>

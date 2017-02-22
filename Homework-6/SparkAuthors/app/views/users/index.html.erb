@@ -1,39 +1,16 @@
 <h1>Discover. Share. Earn Points.</h1>
 
-<!-- Create a users sign up form! -->
 
-<%= form_tag('/users') do %>
-  <p>
-    <%= label_tag(:first_name, 'First Name:') %>
-    <%= text_field_tag(:first_name, 'Enter first name' ) %>
-    <%= label_tag(:last_name, 'Last Name:') %>
-    <%= text_field_tag(:last_name, 'Enter last_name' ) %>
-  </p>
+<!-- enter a link for the user to sign up. -->
 
-  <p>
-    <%= label_tag(:emial, 'Email:') %>
-    <%= text_field_tag(:email, 'Enter your email' ) %>
-  </p>
-  <p>
-    <%= label_tag(:gender, 'Gender:') %>
-    <%= text_field_tag(:gender, 'Male or Famale' ) %>
-  </p>
-  <p>
-    <%= label_tag(:age, 'Age:') %>
-    <%= text_field_tag(:age, 'Enter age with number' ) %>
-  </p>
-  <p>
-    <%= check_box_tag(:subscription) %>
-    <%= label_tag(:resubscriptionply, 'Would you like to subscribe?')%>
-  </p>
-    <%= submit_tag('Submit') %>
-  </p>
-<% end %>
+<%= link_to 'Sign up', new_user_path %>
+
+<!-- List all the users currently on the site.-->
 
 
-<%= @users.each do |user|%>
+<% @users.each do |user|%>
   <p>
-    <span> <%= user.first_name%> </span>
+    <span> <%=link_to user.first_name, user_path(user)%> </span>
     <span> <%= user.last_name%> </span>
     <span> <%= user.gender%> </span>
     <span> <%= user.email%> </span>
