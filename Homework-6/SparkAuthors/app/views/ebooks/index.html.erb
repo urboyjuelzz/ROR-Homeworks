@@ -1,1 +1,13 @@
+<h1>Ebooks Index</h1>
 
+<!-- create a loop that shows all the ebooks in the sys. -->
+<%= @ebooks.each do |ebook| %>
+  <p>
+    <span><%= link_to ebook.title, ebook_path(ebook)%></span>
+    <span><%= ebook.genre %></span>
+    <span><%= ebook.short_desc%></span>
+    <span><%= ebook.body %></span>
+    <span><%= ebook.cost %></span>
+  </p>
+
+<% end %>

@@ -1,0 +1,33 @@
+<h1>New Story</h1>
+
+
+<!-- This form will allow users to create ebooks in the database! -->
+<%= form_for @ebook, url: {action: :create} do |f| %>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :genre %><br>
+    <%= f.text_field :genre %>
+  </p>
+  <p>
+    <%= f.label :short_desc %><br>
+    <%= f.text_area :short_desc %>
+  </p>
+  <p>
+    <!-- your naming this story right now because you dont want to put text/body, but ultimately you want to enter a chapter dropdown. -->
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.label :cost %><br>
+    <%= f.text_field :cost %>
+  </p>
+
+
+  <p>
+    <%= f.submit%>
+  </p>
+<% end %>

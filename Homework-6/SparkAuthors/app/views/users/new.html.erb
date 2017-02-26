@@ -1,34 +1,28 @@
-<h1>Discover. Share. Earn Points.</h1>
-
-<!-- create a link that lets users go back to the index view -->
-<p><%= link_to 'Home page', users_path %></p>
+<h1>New Users</h1>
 
 <!-- Create a users sign up form! -->
-<!-- the show should direct them to their user profile. -->
-<%= form_for @users url: {action: 'create' } do |f| %>
+<%= form_for @user, url: {action: :create} do |f| %>
   <p>
-    <%= label_tag(:first_name, 'First Name:') %>
-    <%= text_field_tag(:first_name, 'Enter first name' ) %>
-    <%= label_tag(:last_name, 'Last Name:') %>
-    <%= text_field_tag(:last_name, 'Enter last_name' ) %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
   </p>
 
   <p>
-    <%= label_tag(:emial, 'Email:') %>
-    <%= text_field_tag(:email, 'Enter your email' ) %>
+    <%= f.label :emial %>
+    <%= f.text_field :email %>
   </p>
   <p>
-    <%= label_tag(:gender, 'Gender:') %>
-    <%= text_field_tag(:gender, 'Male or Famale' ) %>
+    <%= f.label :gender %>
+    <%= f.text_field :gender %>
   </p>
   <p>
-    <%= label_tag(:age, 'Age:') %>
-    <%= text_field_tag(:age, 'Enter age with number' ) %>
+    <%= f.label :age %>
+    <%= f.text_field :age %>
   </p>
+
   <p>
-    <%= check_box_tag(:subscription) %>
-    <%= label_tag(:resubscriptionply, 'Would you like to subscribe?')%>
-  </p>
-    <%= submit_tag('Submit') %>
+    <%= f.submit :submit %>
   </p>
 <% end %>

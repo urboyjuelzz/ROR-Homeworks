@@ -1,13 +1,7 @@
-<h1>Discover. Share. Earn Points.</h1>
+<h1>User Index</h1>
 
-
-<!-- enter a link for the user to sign up. -->
-
-<%= link_to 'Sign up', new_user_path %>
 
 <!-- List all the users currently on the site.-->
-
-
 <% @users.each do |user|%>
   <p>
     <span> <%=link_to user.first_name, user_path(user)%> </span>

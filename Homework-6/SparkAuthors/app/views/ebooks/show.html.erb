@@ -1,0 +1,18 @@
+<h1>Show Ebook Detail</h1>
+
+
+<!-- Sends users back to the users index page -->
+<%= link_to 'All Ebooks', ebooks_path  %>
+<!-- Sends users to the edit page for that specific user. -->
+<%= link_to 'Edit Ebook', edit_ebook_path %>
+<!-- Send DELETE request to /characters/:id and add a confirmation box -->
+<td><%= link_to 'Delete', ebook_path(@ebook), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
+<% if @ebook %>
+    <h1><%= @ebook.title %></h1>
+    <h3><%= @ebook.short_desc %> </h3>
+    <p><%= @ebook.body %> </p>
+<% else %>
+    <p>ebook not found!</p>
+<% end %>
