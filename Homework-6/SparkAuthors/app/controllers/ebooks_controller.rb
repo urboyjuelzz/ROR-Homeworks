@@ -10,6 +10,7 @@ class EbooksController < ApplicationController
     redirect_to ebook_path(@ebook)
   end
   def show
+    @user = User.find_by_id(:id)
     @ebook = Ebook.find_by_id(params[:id])
   end
   # This will render the edit form with pre-populated data.
