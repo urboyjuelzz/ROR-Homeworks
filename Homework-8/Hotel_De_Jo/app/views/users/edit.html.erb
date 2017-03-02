@@ -1,0 +1,27 @@
+<h1>Edit Page</h1>
+
+<%= form_for @user, url: {action: :update} do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :headline %>
+    <%= f.text_field :headline %>
+  </p>
+  <p>
+    <%= f.label :profile %>
+    <%= f.text_area :profile %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+  <% if user_signed_in? && current_user.admin? %>
+    <%= f.check_box :admin %>
+    <%=f.label :admin %>  
+  <% end %>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

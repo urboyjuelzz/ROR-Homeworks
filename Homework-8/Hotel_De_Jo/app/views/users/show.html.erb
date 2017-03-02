@@ -1,0 +1,18 @@
+<h1>User Profile</h1>
+
+<% if @user %>
+    <h1>Hello <%= @user.name %></h1>
+    <h3><%= @user.headline %></h3>
+    <p><strong>About:</strong> <%= @user.profile %></p>
+    <p><strong>Contact:</strong> <%= @user.email %></p>
+
+<% else %>
+    <p>Character not found!</p>
+<% end %>
+
+<% if user_signed_in? && (current_user.admin? || current_user == @user) %>
+  <!-- Sends users to the edit page for that specific user. -->
+  <%= link_to 'Edit User', edit_user_path %> |
+  <!-- Send DELETE request to /characters/:id and add a confirmation box -->
+  <td><%= link_to 'Delete', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>
