@@ -1,16 +1,33 @@
+<!-- Creating a form to render looking up stocks -->
 <div id="stock-lookup">
   <h3>Search for Stocks</h3>
-  <%= form_tag search_stock_path, remote: true, method: :get, id: 'stock-lookup-form' do %>
+  <!-- This line of code calls the ajax javascript that submits the data notice the id you set! -->
+  <%= form_tag search_stock_path, remote: true, method: :get, id:   'stock-lookup-form' do %>
   <div class = "form-group row no-padding text-center col-md-12">
     <div class="col-md-10">
+      <!-- this line of code is the actual search field thats entered by the users(params) and linked to the stock model. -->
       <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true,
                                                           class: 'form-control search-box input-lg' %>
     </div>
     <div class="col-md-2">
+      <!-- Created a button to submit the search inquiry. -->
       <%= button_tag(type: :submit, class: "btn btn-lg btn-success") do %>
         <i class= "fa fa-search"></i> Look up a stock
       <% end %>
     </div>
   </div>
   <% end %>
+  <!-- A Spinner that calls the spinner partial after looked_up_a_stock button is pressed -->
+  <%= render 'common/spinner' %>
+
+  <!-- if a stock is found, stock info would show -->
+  <% if @stock %>
+    <div id="stock-lookup-results" class="well results-block">
+      <strong>Symbol:</strong> <%= @stock.ticker %>
+      <strong>Name:</strong> <%= @stock.name %>
+      <strong>Price:</strong> <%= @stock.price %>
+    </div>
+  <% end %>
+  <div id="stock-lookup-errors">
+  </div>
 </div>

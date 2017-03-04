@@ -15,3 +15,13 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+// creating a javascripts hide_spinner function for the spinner id in the _spinner partial.
+var hide_spinner = function(){
+  $('#spinner').hide();
+}
+
+// creating a javascripts show_spinner function for the spinner id in the _spinner partial.
+var show_spinner = function(){
+  $('#spinner').show();
+}
