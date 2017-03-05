@@ -11,7 +11,7 @@ class StocksController < ApplicationController
     if @stock
       # render json: @stock
       render partial: 'lookup'
-    # or else render the status not found method.
+    # or else if not, render the status not found method.
     elsif true
       render status: :not_found, nothing: true
     end

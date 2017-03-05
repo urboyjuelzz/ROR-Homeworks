@@ -1,4 +1,9 @@
 class Stock < ActiveRecord::Base
+
+  has_many :user_stocks
+  has_many :users, through: :user_stocks
+
+
   # We are adding the self. prior to the method name, because these methods are not tied to any objects or object lifecycle, we need to be able to use them without having any instances of a stock.
 
   # Your looking for an existing ticker_symbol, where the ticker: key is givent the ticker symbol argument first.
