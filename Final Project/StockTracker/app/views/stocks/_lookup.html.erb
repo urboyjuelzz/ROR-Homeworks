@@ -2,7 +2,7 @@
 <div id="stock-lookup">
   <h3>Search for Stocks</h3>
   <!-- This line of code calls the ajax javascript that submits the data notice the id you set! -->
-  <%= form_tag search_stock_path, remote: true, method: :get, id:   'stock-lookup-form' do %>
+  <%= form_tag search_stocks_path, remote: true, method: :get, id:   'stock-lookup-form' do %>
   <div class = "form-group row no-padding text-center col-md-12">
     <div class="col-md-10">
       <!-- this line of code is the actual search field thats entered by the users(params) and linked to the stock model. -->
