@@ -28,4 +28,29 @@ irb(main):005:0> Friendship.all
 => #<ActiveRecord::Relation []>
 irb(main):006:0> Friendship
 => Friendship(id: integer, user_id: integer, friend_id: integer, created_at: datetime, updated_at: datetime)
-irb(main):007:0>
+irb(main):005:0> Friendship.all
+  Friendship Load (18.3ms)  SELECT "friendships".* FROM "friendships"
+=> #<ActiveRecord::Relation []>
+irb(main):006:0> Friendship
+=> Friendship(id: integer, user_id: integer, friend_id: integer, created_at: datetime, updated_at: datetime)
+irb(main):007:0> exit
+JOELs-MacBook-Air:StockTracker joelceballos$ rails c
+Loading development environment (Rails 4.2.7.1)
+irb(main):001:0> user = User.first
+  User Load (0.3ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+=> #<User id: 1, email: "urboyjuelzz@gmail.com", created_at: "2017-03-03 22:44:31", updated_at: "2017-03-06 03:40:10", first_name: "Joel", last_name: "Ceballos">
+irb(main):002:0> User.all
+  User Load (1.9ms)  SELECT "users".* FROM "users"
+=> #<ActiveRecord::Relation [#<User id: 1, email: "urboyjuelzz@gmail.com", created_at: "2017-03-03 22:44:31", updated_at: "2017-03-06 03:40:10", first_name: "Joel", last_name: "Ceballos">, #<User id: 2, email: "addy@gmail.com", created_at: "2017-03-06 02:16:22", updated_at: "2017-03-06 02:16:22", first_name: "Adetoro", last_name: "Adegbola">]>
+irb(main):003:0> user2 = User.find(2)
+  User Load (1.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+=> #<User id: 2, email: "addy@gmail.com", created_at: "2017-03-06 02:16:22", updated_at: "2017-03-06 02:16:22", first_name: "Adetoro", last_name: "Adegbola">
+irb(main):004:0> user.friends
+  User Load (0.3ms)  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 1]]
+=> #<ActiveRecord::Associations::CollectionProxy []>
+irb(main):005:0> user.friends << user2
+   (0.4ms)  begin transaction
+  SQL (1.8ms)  INSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 1], ["friend_id", 2], ["created_at", "2017-03-06 04:36:17.315756"], ["updated_at", "2017-03-06 04:36:17.315756"]]
+   (1.1ms)  commit transaction
+=> #<ActiveRecord::Associations::CollectionProxy [#<User id: 2, email: "addy@gmail.com", created_at: "2017-03-06 02:16:22", updated_at: "2017-03-06 02:16:22", first_name: "Adetoro", last_name: "Adegbola">]>
+irb(main):006:0>
