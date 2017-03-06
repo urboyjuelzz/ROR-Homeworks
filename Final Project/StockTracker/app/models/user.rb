@@ -9,6 +9,12 @@ class User < ActiveRecord::Base
    has_many :stocks, through: :user_stocks
 
 
+  #  Combining first and last name
+  def full_name
+    return "#{first_name} #{last_name}".strip if (first_name || last_name)
+    "Anonymous"
+  end
+
   #  setting business rules
 
   #  method that see's if the user can add a stock. checks to see if the user is under the stock limit or if the stock was already added.
